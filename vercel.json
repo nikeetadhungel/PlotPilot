@@ -1,16 +1,19 @@
 {
-  // skip the automatic `npm install` step entirely
   "installCommand": "",
-
   "builds": [
-    // Composer will run automatically against composer.json
-    { "src": "composer.json",    "use": "@vercel/php" },
-    // Copy everything under public/ as static assets
-    { "src": "public/**/*",      "use": "@vercel/static" }
+    {
+      "src": "composer.json",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    }
   ],
-
   "routes": [
-    // Route every request to Laravel’s front-controller
-    { "src": "/(.*)",            "dest": "public/index.php" }
+    {
+      "src": "/(.*)",
+      "dest": "public/index.php"
+    }
   ]
 }

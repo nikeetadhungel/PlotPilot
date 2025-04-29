@@ -1,12 +1,13 @@
+
 {
   "builds": [
-    // 1) install your Composer dependencies
+   
     { "src": "composer.json",      "use": "@vercel/php" },
-    // 2) compile everything under public/ (so Vercel uploads the full Laravel public folder)
-    { "src": "public/**/*",        "use": "@vercel/php" }
+
+    { "src": "public/**/*",        "use": "@vercel/static" }
   ],
   "routes": [
-    // forward every request to the Laravel front-controller
+  
     { "src": "/(.*)",              "dest": "public/index.php" }
   ]
 }
